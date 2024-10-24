@@ -75,4 +75,12 @@ public class SidePage extends BasePage {
         click(brokenLinks);
         return new BrokenLinksImagesPage(driver);
     }
+
+    @FindBy(xpath = "//span[.='Tool Tips']")
+    WebElement toolTips;
+
+    public ToolTipsPage selectToolTips() {
+        click(toolTips);
+        return new ToolTipsPage(driver);
+    }
 }

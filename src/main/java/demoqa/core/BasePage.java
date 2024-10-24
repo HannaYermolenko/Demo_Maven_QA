@@ -181,4 +181,13 @@ public class BasePage {
             return true;
         }
     }
+
+    public void pause(long millis) {
+        try {
+            Thread.sleep(millis);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
+    }
+
 }
