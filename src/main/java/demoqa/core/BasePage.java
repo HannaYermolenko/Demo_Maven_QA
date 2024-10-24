@@ -165,4 +165,20 @@ public class BasePage {
            // throw new RuntimeException(e);
         }
     }
+
+    public boolean isElementPresent(WebElement element) {
+        try {
+            return element.isDisplayed();
+        } catch (NoSuchElementException e) {
+            return false;
+        }
+    }
+
+    public boolean isElementNotPresent(WebElement element) {
+        try {
+            return element.isDisplayed();
+        } catch (NoSuchElementException e) {
+            return true;
+        }
+    }
 }

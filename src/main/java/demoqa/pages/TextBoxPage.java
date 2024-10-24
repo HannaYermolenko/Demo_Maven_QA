@@ -7,6 +7,7 @@ import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
 
 import java.awt.*;
+import java.awt.event.KeyEvent;
 
 public class TextBoxPage extends BasePage {
 
@@ -28,15 +29,50 @@ public class TextBoxPage extends BasePage {
         return this;
     }
 
+//    public TextBoxPage keyboardEvent() throws AWTException {
+//        Robot robot = new Robot();
+//        highlight(robot);
+//        copy(robot);
+//        tab(robot);
+//        paste(robot);
+//        tab(robot);
+//
+//        enter(robot);
+//
+//        return this;
+//    }
+
     public TextBoxPage keyboardEvent() throws AWTException {
         Robot robot = new Robot();
-        highlight(robot);
-        copy(robot);
-        tab(robot);
-        paste(robot);
-        tab(robot);
+        // Ctrl + A
+        robot.keyPress(KeyEvent.VK_CONTROL);
+        robot.keyPress(KeyEvent.VK_A);
+        robot.keyRelease(KeyEvent.VK_A);
+        robot.keyRelease(KeyEvent.VK_CONTROL);
 
-        enter(robot);
+        // Ctrl + C
+        robot.keyPress(KeyEvent.VK_CONTROL);
+        robot.keyPress(KeyEvent.VK_C);
+        robot.keyRelease(KeyEvent.VK_C);
+        robot.keyRelease(KeyEvent.VK_CONTROL);
+
+        // Tab
+        robot.keyPress(KeyEvent.VK_TAB);
+        robot.keyRelease(KeyEvent.VK_TAB);
+
+        // Ctrl + V
+        robot.keyPress(KeyEvent.VK_CONTROL);
+        robot.keyPress(KeyEvent.VK_V);
+        robot.keyRelease(KeyEvent.VK_V);
+        robot.keyRelease(KeyEvent.VK_CONTROL);
+
+        // Tab
+        robot.keyPress(KeyEvent.VK_TAB);
+        robot.keyRelease(KeyEvent.VK_TAB);
+
+        // Enter
+        robot.keyPress(KeyEvent.VK_ENTER);
+        robot.keyRelease(KeyEvent.VK_ENTER);
 
         return this;
     }

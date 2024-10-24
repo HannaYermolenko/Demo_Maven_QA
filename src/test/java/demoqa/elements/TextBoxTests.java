@@ -28,13 +28,13 @@ public class TextBoxTests extends TestBase {
 
     //"Name", "email@gmail.com", "address"
 
-//    @Test(dataProvider = "addNewUserFormFromCSVFile", dataProviderClass = DataProviders.class)
-//    public void keyboardEventDataProviderTest(String name, String email, String address) throws AWTException {
-//        new TextBoxPage(app.driver)
-//                .enterPersonalData(name, email, address)
-//                .keyboardEvent()
-//                .verifyCopyPasteAddress2();
-//    }
+    @Test(dataProvider = "addNewUserFormFromCSVFile", dataProviderClass = DataProviders.class)
+    public void keyboardEventDataProviderTest(String name, String email, String address) throws AWTException {
+        new TextBoxPage(app.driver)
+                .enterPersonalData(name, email, address)
+                .keyboardEvent()
+                .verifyCopyPasteAddress2();
+    }
 }
 
 

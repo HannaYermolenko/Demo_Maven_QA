@@ -10,12 +10,13 @@ import java.util.Iterator;
 import java.util.List;
 
 public class DataProviders {
+
     @DataProvider
     public Iterator<Object[]> addNewUserFormFromCSVFile() throws IOException {
         List<Object[]> list = new ArrayList<>();
         BufferedReader reader = new BufferedReader(new FileReader("src/test/resources/user.csv"));
         String line = reader.readLine();
-        while (line != null){
+        while (line != null) {
             list.add(line.split(","));
             line = reader.readLine();
         }
